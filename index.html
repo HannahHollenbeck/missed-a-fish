@@ -1,0 +1,60 @@
+<html>
+
+<head>
+        <title>makea.fish</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body bgcolor="#0000FF" style="color:#ffffff;text-align:center;">
+        <img id="fish" style="margin:0 auto;border:1px solid white" src="fishimg.php?s=709&t=x432x&f=37" />
+
+        <script>
+                const now = new Date();
+
+                let hours = now.getHours();
+                let minutes = now.getMinutes();
+                let seconds = now.getSeconds();
+                let milliseconds = now.getMilliseconds();
+
+                // convert to 12-hour format
+                if (hours > 12) {
+                        hours -= 12;
+                }
+
+                // format minutes
+                if (minutes < 10) {
+                        minutes = "0" + minutes;
+                }
+
+                // build token like xMMHx
+                let out = "x" + minutes + hours + "x";
+
+                // ---------------------------------------------------
+                // SPECIAL CONDITION (11:11 trigger)
+
+                if (hours == 11 && minutes == 11) {
+                        out = "x6362x";
+                        document.body.insertAdjacentHTML("beforeend", "<p>11:11 make a fish</p>");
+                } else {
+                        document.body.insertAdjacentHTML("beforeend", "<p>come back at 11:11</p>");
+                }
+
+                // ---------------------------------------------------
+
+                const ms = now.getMilliseconds();
+                const sec = now.getSeconds();
+
+                // update fish image URL
+                document.getElementById("fish").src =
+                        "fishimg.php?s=" +
+                        ms +
+                        "&t=" +
+                        out +
+                        "&f=" +
+                        sec;
+                document.getElementById("fish").src = "/Users/hannahhollenbeck/Desktop/IMG_0366.JPG";
+        </script>
+
+</body>
+
+</html>
