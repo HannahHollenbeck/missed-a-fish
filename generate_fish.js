@@ -42,7 +42,7 @@ if (!window.isFishTime) {
         const canvas = document.getElementById("fishCanvas");
         const context = canvas.getContext("2d");
 
-        const numFish = 10;
+        const numFish = 18;
         const targetHeight = 125;
 
         const head = new Image();
